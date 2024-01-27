@@ -39,19 +39,19 @@ jobs:
       run: echo ::set-output name=VALUE::build_${{ matrix.os }}_type-${{ matrix.build_type }}_cmake-${{ steps.cmake_version.outputs.VALUE }}
 
     - name: Update the cache (ccache)
-      uses: actions/cache@v1.0.3
+      uses: actions/cache@v1.2.1
       with:
         path: ccache
         key: ${{ steps.cache_key.outputs.VALUE }}_ccache
 
     - name: Update the cache (Downloads)
-      uses: actions/cache@v1.0.3
+      uses: actions/cache@v1.2.1
       with:
         path: downloads
         key: ${{ steps.cache_key.outputs.VALUE }}_downloads
 
     - name: Update the cache (git submodules)
-      uses: actions/cache@v1.0.3
+      uses: actions/cache@v1.2.1
       with:
         path: .git/modules
         key: ${{ steps.cache_key.outputs.VALUE }}_gitsubmodules
